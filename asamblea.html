@@ -1,0 +1,2044 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asamblea Extraordinaria – Bosque Robledal 2026</title>
+    <meta
+      name="description"
+      content="Convocatoria a Asamblea General Extraordinaria del Conjunto Bosques de Robledal. Domingo 26 de abril de 2026 a las 8:00 AM en las zonas comunes del conjunto."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* ══════════════════════════════════════
+         DESIGN TOKENS — Modern Professional
+         Palette: Midnight Blue · Slate · Emerald · Gold
+      ══════════════════════════════════════ */
+      :root {
+        /* Core palette */
+        --midnight: #0f172a; /* deepest background/header */
+        --navy: #1e293b; /* secondary dark surface */
+        --slate-700: #334155;
+        --slate-500: #64748b;
+        --slate-300: #cbd5e1;
+        --slate-100: #f1f5f9;
+        --slate-50: #f8fafc;
+        --white: #ffffff;
+
+        /* Accent – Emerald */
+        --emerald: #059669;
+        --emerald-dark: #047857;
+        --emerald-light: #d1fae5;
+        --emerald-mid: #34d399;
+
+        /* Accent – Gold */
+        --gold: #d97706;
+        --gold-dark: #b45309;
+        --gold-light: #fef3c7;
+        --gold-mid: #fbbf24;
+
+        /* Semantic */
+        --danger: #dc2626;
+        --danger-light: #fee2e2;
+        --info: #0369a1;
+        --info-light: #e0f2fe;
+
+        /* Typography */
+        --text-primary: var(--midnight);
+        --text-secondary: var(--slate-700);
+        --text-muted: var(--slate-500);
+
+        /* Shadows */
+        --shadow-sm:
+          0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+        --shadow-md:
+          0 4px 16px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(15, 23, 42, 0.08);
+        --shadow-lg:
+          0 10px 32px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.08);
+        --shadow-xl: 0 20px 56px rgba(15, 23, 42, 0.18);
+
+        /* Radii */
+        --r-sm: 6px;
+        --r-md: 10px;
+        --r-lg: 16px;
+        --r-xl: 24px;
+
+        /* Motion */
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --t: 0.22s;
+      }
+
+      /* ══════════════════════════════════════
+         RESET & BASE
+      ══════════════════════════════════════ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        line-height: 1.65;
+        color: var(--text-primary);
+        background: #e8edf4; /* cool-toned page background */
+        min-height: 100vh;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* ══════════════════════════════════════
+         PAGE WRAPPER
+      ══════════════════════════════════════ */
+      .page-wrapper {
+        max-width: 940px;
+        margin: 36px auto 56px;
+        background: var(--white);
+        border-radius: var(--r-xl);
+        box-shadow: var(--shadow-xl);
+        overflow: hidden;
+      }
+
+      /* ══════════════════════════════════════
+         HEADER
+      ══════════════════════════════════════ */
+      .site-header {
+        background: var(--midnight);
+        color: var(--white);
+        padding: 56px 48px 48px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle dot-grid texture */
+      .site-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 28px 28px;
+        pointer-events: none;
+      }
+
+      /* Emerald accent stripe at bottom */
+      .site-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--emerald) 0%,
+          var(--gold-mid) 100%
+        );
+      }
+
+      .header-eyebrow {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(5, 150, 105, 0.18);
+        border: 1px solid rgba(52, 211, 153, 0.35);
+        color: var(--emerald-mid);
+        font-size: 0.73em;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 5px 18px;
+        border-radius: var(--r-xl);
+        margin-bottom: 22px;
+      }
+
+      .site-header h1 {
+        position: relative;
+        font-size: clamp(1.65em, 4.5vw, 2.6em);
+        font-weight: 900;
+        line-height: 1.18;
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .site-header h1 span {
+        color: var(--emerald-mid);
+      }
+
+      .header-sub {
+        position: relative;
+        font-size: 1em;
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 400;
+        margin-bottom: 32px;
+      }
+
+      /* Event chips row */
+      .event-row {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .event-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255, 0.92);
+        padding: 9px 20px;
+        border-radius: var(--r-xl);
+        font-size: 0.88em;
+        font-weight: 600;
+        backdrop-filter: blur(6px);
+        transition: background var(--t) var(--ease);
+      }
+
+      .event-chip:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .event-chip .chip-icon {
+        font-size: 1em;
+      }
+
+      /* ══════════════════════════════════════
+         STICKY NAV
+      ══════════════════════════════════════ */
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 14px 24px;
+        background: var(--navy);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 16px;
+        border-radius: var(--r-xl);
+        font-size: 0.8em;
+        font-weight: 600;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        transition:
+          background var(--t) var(--ease),
+          color var(--t) var(--ease);
+      }
+
+      .nav-link:hover {
+        background: rgba(5, 150, 105, 0.25);
+        color: var(--emerald-mid);
+      }
+
+      /* ══════════════════════════════════════
+         MAIN CONTENT
+      ══════════════════════════════════════ */
+      .main-content {
+        padding: 48px 52px;
+      }
+
+      /* ── Section header ── */
+      .section-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 24px;
+        margin-top: 56px;
+      }
+
+      .section-head:first-child {
+        margin-top: 0;
+      }
+
+      .section-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: var(--r-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25em;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .si-alert {
+        background: var(--danger-light);
+        color: var(--danger);
+      }
+      .si-agenda {
+        background: var(--info-light);
+        color: var(--info);
+      }
+      .si-leaders {
+        background: var(--emerald-light);
+        color: var(--emerald-dark);
+      }
+      .si-form {
+        background: var(--gold-light);
+        color: var(--gold-dark);
+      }
+
+      .section-head-text h2 {
+        font-size: 1.3em;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
+      }
+
+      .section-head-text .sub {
+        display: block;
+        font-size: 0.8em;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-top: 3px;
+      }
+
+      /* ── Divider ── */
+      .divider {
+        border: none;
+        height: 1px;
+        background: var(--slate-100);
+        margin: 52px 0 0;
+      }
+
+      /* ══════════════════════════════════════
+         1. JUSTIFICATION BOX
+      ══════════════════════════════════════ */
+      .just-card {
+        background: #fffaf9;
+        border: 1.5px solid #fecaca;
+        border-left: 4px solid var(--danger);
+        border-radius: var(--r-md);
+        padding: 28px 32px;
+      }
+
+      .just-card p {
+        color: var(--text-secondary);
+        font-size: 0.97em;
+        margin-bottom: 18px;
+        line-height: 1.65;
+      }
+
+      .just-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .just-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(220, 38, 38, 0.09);
+        color: var(--text-secondary);
+        font-size: 0.96em;
+        line-height: 1.55;
+      }
+
+      .just-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .just-list li .jl-icon {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--danger-light);
+        color: var(--danger);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65em;
+        font-weight: 800;
+        margin-top: 1px;
+      }
+
+      /* ══════════════════════════════════════
+         2. AGENDA — HIERARCHY DESIGN
+      ══════════════════════════════════════ */
+      .agenda-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* Top-level item */
+      .agenda-item {
+        background: var(--white);
+        border: 1.5px solid var(--slate-300);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        transition:
+          box-shadow var(--t) var(--ease),
+          border-color var(--t) var(--ease);
+      }
+
+      .agenda-item:hover {
+        border-color: #93c5fd;
+        box-shadow: var(--shadow-md);
+      }
+
+      .agenda-item-body {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+      }
+
+      .agenda-num {
+        min-width: 34px;
+        height: 34px;
+        border-radius: var(--r-sm);
+        background: var(--navy);
+        color: var(--white);
+        font-size: 0.82em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        letter-spacing: -0.01em;
+      }
+
+      .agenda-item-text {
+        font-size: 0.93em;
+        color: var(--text-secondary);
+        line-height: 1.45;
+        font-weight: 500;
+      }
+
+      /* Point 5 — special highlight */
+      .agenda-item.item-parent {
+        border-color: var(--info);
+        border-left: 4px solid var(--info);
+        background: var(--slate-50);
+      }
+
+      .agenda-item.item-parent .agenda-num {
+        background: var(--info);
+      }
+
+      .agenda-item.item-parent .agenda-item-text {
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      /* Sub-items container */
+      .sub-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1.5px solid rgba(3, 105, 161, 0.15);
+        background: #f0f7ff;
+        padding: 6px 0;
+      }
+
+      .sub-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 11px 18px 11px 18px;
+        border-bottom: 1px dashed rgba(3, 105, 161, 0.12);
+        transition: background var(--t) var(--ease);
+      }
+
+      .sub-item:last-child {
+        border-bottom: none;
+      }
+      .sub-item:hover {
+        background: rgba(3, 105, 161, 0.06);
+      }
+
+      .sub-num {
+        min-width: 38px;
+        height: 26px;
+        border-radius: var(--r-sm);
+        background: rgba(3, 105, 161, 0.14);
+        color: var(--info);
+        font-size: 0.75em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+        letter-spacing: 0.02em;
+      }
+
+      .sub-text {
+        font-size: 0.9em;
+        color: var(--slate-700);
+        line-height: 1.45;
+      }
+
+      /* ══════════════════════════════════════
+         3. LEADERS
+      ══════════════════════════════════════ */
+      .leaders-card {
+        background: var(--slate-50);
+        border: 1.5px solid #a7f3d0;
+        border-radius: var(--r-md);
+        overflow: hidden;
+      }
+
+      .leader-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 13px 20px;
+        border-bottom: 1px solid #d1fae5;
+        transition: background var(--t) var(--ease);
+      }
+
+      .leader-row:last-child {
+        border-bottom: none;
+      }
+      .leader-row:hover {
+        background: #ecfdf5;
+      }
+
+      .leader-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .leader-tower-badge {
+        min-width: 68px;
+        padding: 4px 10px;
+        background: var(--emerald-light);
+        color: var(--emerald-dark);
+        font-size: 0.72em;
+        font-weight: 700;
+        border-radius: var(--r-sm);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      .leader-name {
+        font-weight: 600;
+        font-size: 0.95em;
+        color: var(--text-primary);
+      }
+
+      .btn-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: #25d366;
+        color: var(--white);
+        padding: 7px 16px;
+        border-radius: var(--r-xl);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.83em;
+        transition:
+          background var(--t) var(--ease),
+          transform var(--t) var(--ease),
+          box-shadow var(--t) var(--ease);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .btn-wa:hover {
+        background: #1ab855;
+        transform: scale(1.04);
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        color: var(--white);
+      }
+
+      .btn-wa svg {
+        width: 15px;
+        height: 15px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════════════
+         DOWNLOAD SECTION
+      ══════════════════════════════════════ */
+      .download-section {
+        margin-top: 28px;
+        background: var(--gold-light);
+        border: 1.5px solid #fcd34d;
+        border-left: 4px solid var(--gold);
+        border-radius: var(--r-md);
+        padding: 24px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .download-text h3 {
+        font-size: 1em;
+        font-weight: 700;
+        color: var(--gold-dark);
+        margin-bottom: 4px;
+      }
+
+      .download-text p {
+        font-size: 0.88em;
+        color: var(--slate-700);
+        margin: 0;
+      }
+
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        color: var(--white);
+        padding: 12px 26px;
+        font-family: inherit;
+        font-size: 0.92em;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: var(--r-md);
+        border: none;
+        cursor: pointer;
+        transition:
+          transform var(--t) var(--ease),
+          box-shadow var(--t) var(--ease);
+        box-shadow: 0 4px 14px rgba(180, 83, 9, 0.3);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .btn-download:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(180, 83, 9, 0.4);
+        color: var(--white);
+      }
+
+      .btn-download:active {
+        transform: scale(0.98);
+      }
+
+      /* ══════════════════════════════════════
+         4. FORM
+      ══════════════════════════════════════ */
+      .form-card {
+        background: var(--slate-50);
+        border: 1.5px solid var(--slate-300);
+        border-radius: var(--r-md);
+        padding: 30px 34px;
+      }
+
+      .form-intro {
+        font-size: 0.93em;
+        color: var(--text-muted);
+        margin-bottom: 26px;
+        line-height: 1.6;
+        border-left: 3px solid var(--gold);
+        padding-left: 14px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        font-size: 0.84em;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .form-group label .req {
+        color: var(--danger);
+        margin-left: 2px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border: 1.5px solid var(--slate-300);
+        border-radius: var(--r-sm);
+        font-family: inherit;
+        font-size: 0.95em;
+        color: var(--text-primary);
+        background: var(--white);
+        transition:
+          border-color var(--t) var(--ease),
+          box-shadow var(--t) var(--ease);
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      .form-group select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 40px;
+        cursor: pointer;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--emerald);
+        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.14);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 128px;
+      }
+
+      /* Submit button */
+      .btn-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 14px 32px;
+        background: linear-gradient(
+          135deg,
+          var(--emerald) 0%,
+          var(--emerald-dark) 100%
+        );
+        color: var(--white);
+        font-family: inherit;
+        font-size: 1em;
+        font-weight: 700;
+        border: none;
+        border-radius: var(--r-md);
+        cursor: pointer;
+        transition:
+          transform var(--t) var(--ease),
+          box-shadow var(--t) var(--ease),
+          opacity var(--t) var(--ease);
+        box-shadow: 0 4px 16px rgba(4, 120, 87, 0.35);
+        margin-top: 4px;
+        letter-spacing: 0.01em;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(4, 120, 87, 0.45);
+      }
+
+      .btn-submit:active {
+        transform: scale(0.98);
+      }
+
+      .btn-submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Feedback */
+      .form-feedback {
+        display: none;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 16px;
+        border-radius: var(--r-sm);
+        font-size: 0.92em;
+        font-weight: 500;
+        margin-top: 14px;
+        line-height: 1.5;
+      }
+
+      .form-feedback.success {
+        display: flex;
+        background: var(--emerald-light);
+        border: 1.5px solid #6ee7b7;
+        color: var(--emerald-dark);
+      }
+
+      .form-feedback.error {
+        display: flex;
+        background: var(--danger-light);
+        border: 1.5px solid #fca5a5;
+        color: var(--danger);
+      }
+
+      /* ══════════════════════════════════════
+         FOOTER
+      ══════════════════════════════════════ */
+      .site-footer {
+        background: var(--midnight);
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.83em;
+        padding: 28px 52px;
+        line-height: 1.65;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .site-footer strong {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      /* ══════════════════════════════════════
+         RESPONSIVE — Mobile First
+      ══════════════════════════════════════ */
+      @media (max-width: 680px) {
+        .page-wrapper {
+          margin: 0;
+          border-radius: 0;
+        }
+        .site-header {
+          padding: 40px 22px 36px;
+        }
+        .main-content {
+          padding: 28px 20px;
+        }
+        .site-footer {
+          padding: 24px 20px;
+        }
+
+        .site-nav {
+          gap: 6px;
+          padding: 12px 14px;
+        }
+        .nav-link {
+          font-size: 0.75em;
+          padding: 6px 12px;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .leader-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .btn-wa {
+          align-self: flex-start;
+        }
+
+        .download-section {
+          flex-direction: column;
+          text-align: center;
+        }
+        .btn-download {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .section-head {
+          margin-top: 40px;
+        }
+        .form-card {
+          padding: 22px 18px;
+        }
+        .just-card {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .event-chip {
+          font-size: 0.8em;
+          padding: 7px 14px;
+        }
+        .leader-info {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG sprite (WhatsApp icon) -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <defs>
+        <g id="ico-wa">
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+          />
+        </g>
+      </defs>
+    </svg>
+
+    <div class="page-wrapper" id="top">
+      <!-- ═══════════ HEADER ═══════════ -->
+      <header class="site-header">
+        <div class="header-eyebrow">
+          📣 Convocatoria Oficial · Copropietarios
+        </div>
+        <h1>¡Unidos por la <span>Comunidad</span><br />de Bosque Robledal!</h1>
+        <p class="header-sub">
+          Asamblea General Extraordinaria de Copropietarios
+        </p>
+        <div class="event-row">
+          <div class="event-chip">
+            <span class="chip-icon">📅</span> Domingo 26 de Abril de 2026
+          </div>
+          <div class="event-chip">
+            <span class="chip-icon">🕗</span> 8:00 AM
+          </div>
+          <div class="event-chip">
+            <span class="chip-icon">📍</span> Zonas Comunes del Conjunto
+          </div>
+        </div>
+      </header>
+
+      <!-- ═══════════ NAV ═══════════ -->
+      <nav class="site-nav" aria-label="Secciones principales">
+        <a class="nav-link" href="#justificacion">⚠️ Justificación</a>
+        <a class="nav-link" href="#agenda">📋 Orden del Día</a>
+        <a class="nav-link" href="#lideres">🏘 Líderes de Torre</a>
+        <a class="nav-link" href="#formulario">💬 Dejar Sugerencia</a>
+        <a class="nav-link" href="#estadisticas">📊 Estadísticas</a>
+      </nav>
+
+      <!-- ═══════════ MAIN CONTENT ═══════════ -->
+      <main class="main-content">
+        <!-- ────────────────────────────────────
+             1. JUSTIFICACIÓN
+        ──────────────────────────────────── -->
+        <section id="justificacion" aria-labelledby="h-justificacion">
+          <div class="section-head">
+            <div class="section-icon si-alert">⚠️</div>
+            <div class="section-head-text">
+              <h2 id="h-justificacion">
+                ¿Por qué esta Asamblea Extraordinaria?
+              </h2>
+              <span class="sub"
+                >Irregularidades detectadas en la asamblea virtual del 29 de
+                marzo de 2026</span
+              >
+            </div>
+          </div>
+
+          <div class="just-card">
+            <p>
+              Nuestra urgencia radica en las irregularidades detectadas en la
+              asamblea virtual del pasado
+              <strong>29 de marzo de 2026</strong>. Entre las principales
+              razones se encuentran:
+            </p>
+            <ul class="just-list">
+              <li>
+                <div class="jl-icon">!</div>
+                El desconocimiento del quórum deliberatorio y decisorio.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                Procedimiento inusual en la segunda convocatoria.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                La limitación del derecho de participación y voto debido a
+                omisiones técnicas y silenciamiento de participantes.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                El tiempo limitado para la entrega de la información y anexos
+                presupuestales.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                La presentación del presupuesto sin el debido desglose por
+                rubros ni notas aclaratorias.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                Irregularidades en la dirección de la asamblea que impidieron la
+                libre participación.
+              </li>
+              <li>
+                <div class="jl-icon">!</div>
+                Falta de claridad sobre la composición del consejo de
+                administración tras las votaciones.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ────────────────────────────────────
+             2. ORDEN DEL DÍA
+        ──────────────────────────────────── -->
+        <section id="agenda" aria-labelledby="h-agenda">
+          <div class="section-head">
+            <div class="section-icon si-agenda">📋</div>
+            <div class="section-head-text">
+              <h2 id="h-agenda">Orden del Día Propuesto</h2>
+              <span class="sub"
+                >Puntos a someter a consideración en la Asamblea
+                Extraordinaria</span
+              >
+            </div>
+          </div>
+
+          <div class="agenda-list">
+            <!-- 1 -->
+            <div class="agenda-item">
+              <div class="agenda-item-body">
+                <div class="agenda-num">1</div>
+                <div class="agenda-item-text">Verificación de quórum.</div>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="agenda-item">
+              <div class="agenda-item-body">
+                <div class="agenda-num">2</div>
+                <div class="agenda-item-text">
+                  Lectura y aprobación del orden del día.
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="agenda-item">
+              <div class="agenda-item-body">
+                <div class="agenda-num">3</div>
+                <div class="agenda-item-text">
+                  Designación del presidente y secretario de la Asamblea
+                  Ordinaria año 2026.
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="agenda-item">
+              <div class="agenda-item-body">
+                <div class="agenda-num">4</div>
+                <div class="agenda-item-text">
+                  Designación de la Comisión Verificadora del acta y de
+                  escrutinios.
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 — PARENT with sub-items -->
+            <div class="agenda-item item-parent">
+              <div class="agenda-item-body">
+                <div class="agenda-num">5</div>
+                <div class="agenda-item-text">
+                  Irregularidades presentadas en la asamblea general ordinaria
+                  de copropietarios del 29 de marzo de 2026.
+                </div>
+              </div>
+
+              <div class="sub-items">
+                <div class="sub-item">
+                  <div class="sub-num">5.1</div>
+                  <div class="sub-text">
+                    Inexistencia de Quórum Deliberatorio y Decisorio.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.2</div>
+                  <div class="sub-text">
+                    Limitación del Derecho de Participación y Voto.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.3</div>
+                  <div class="sub-text">
+                    Tiempo limitado para la entrega de la Información.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.4</div>
+                  <div class="sub-text">
+                    Presentación de presupuesto sin el debido desglose por
+                    rubros y sin notas.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.5</div>
+                  <div class="sub-text">
+                    Aclaración sobre la composición del consejo de
+                    administración.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.6</div>
+                  <div class="sub-text">
+                    Toma de determinaciones frente a la continuidad de los
+                    actuales miembros del Consejo de Administración y, de ser el
+                    caso, remoción y elección de nuevos integrantes.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.7</div>
+                  <div class="sub-text">
+                    Irregularidades en la Dirección de la Asamblea.
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-num">5.8</div>
+                  <div class="sub-text">
+                    Someter a consideración impugnación del acta de la asamblea
+                    general ordinaria de copropietarios del 29 de marzo de 2026.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /agenda-list -->
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ────────────────────────────────────
+             3. LÍDERES DE TORRE
+        ──────────────────────────────────── -->
+        <section id="lideres" aria-labelledby="h-lideres">
+          <div class="section-head">
+            <div class="section-icon si-leaders">🏘</div>
+            <div class="section-head-text">
+              <h2 id="h-lideres">Líderes de Torre</h2>
+              <span class="sub"
+                >Contacta al líder de tu torre si tienes dudas o
+                inquietudes</span
+              >
+            </div>
+          </div>
+
+          <div class="leaders-card">
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 1</span>
+                <span class="leader-name">Iara Ballesteres</span>
+              </div>
+              <a
+                href="https://wa.me/573164908084"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Iara Ballesteres (Torre 1)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 2</span>
+                <span class="leader-name">Luisa Montoya</span>
+              </div>
+              <a
+                href="https://wa.me/573195066590"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Luisa Montoya (Torre 2)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 3</span>
+                <span class="leader-name">León Darío García</span>
+              </div>
+              <a
+                href="https://wa.me/573218140912"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a León Darío García (Torre 3)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 4</span>
+                <span class="leader-name">Daniel Santamaría</span>
+              </div>
+              <a
+                href="https://wa.me/573057056551"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Daniel Santamaría (Torre 4)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 5</span>
+                <span class="leader-name">Daniela Paniagua</span>
+              </div>
+              <a
+                href="https://wa.me/573217382031"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Daniela Paniagua (Torre 5)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 6</span>
+                <span class="leader-name">Daniela Paniagua</span>
+              </div>
+              <a
+                href="https://wa.me/573217382031"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Daniela Paniagua (Torre 6)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 7</span>
+                <span class="leader-name">Ingrid Durango</span>
+              </div>
+              <a
+                href="https://wa.me/573222935067"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Ingrid Durango (Torre 7)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 8</span>
+                <span class="leader-name">Natali Sánchez</span>
+              </div>
+              <a
+                href="https://wa.me/573148798974"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Natali Sánchez (Torre 8)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 9</span>
+                <span class="leader-name">Ingrid Durango</span>
+              </div>
+              <a
+                href="https://wa.me/573222935067"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Ingrid Durango (Torre 9)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 10</span>
+                <span class="leader-name">Marcela Ríos</span>
+              </div>
+              <a
+                href="https://wa.me/573103742680"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Marcela Ríos (Torre 10)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 11</span>
+                <span class="leader-name">David Arbelaez</span>
+              </div>
+              <a
+                href="https://wa.me/573005068797"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a David Arbelaez (Torre 11)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 16</span>
+                <span class="leader-name">Cesar Rivas</span>
+              </div>
+              <a
+                href="https://wa.me/573242966995"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Cesar Rivas (Torre 16)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 17</span>
+                <span class="leader-name">Jisel Londoño</span>
+              </div>
+              <a
+                href="https://wa.me/573193313433"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Jisel Londoño (Torre 17)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 18</span>
+                <span class="leader-name">Yadira David</span>
+              </div>
+              <a
+                href="https://wa.me/573106177935"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Yadira David (Torre 18)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 19</span>
+                <span class="leader-name">Leidy Bonilla</span>
+              </div>
+              <a
+                href="https://wa.me/573022479007"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Leidy Bonilla (Torre 19)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 19</span>
+                <span class="leader-name">Ronaldo Arroyave</span>
+              </div>
+              <a
+                href="https://wa.me/573017353597"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Ronaldo Arroyave (Torre 19)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 20</span>
+                <span class="leader-name">Leonardo Vargas</span>
+              </div>
+              <a
+                href="https://wa.me/573505821761"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Leonardo Vargas (Torre 20)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+            <div class="leader-row">
+              <div class="leader-info">
+                <span class="leader-tower-badge">Torre 21</span>
+                <span class="leader-name">Jonathan Alzaheri</span>
+              </div>
+              <a
+                href="https://wa.me/573192275972"
+                class="btn-wa"
+                target="_blank"
+                rel="noopener"
+                aria-label="Contactar a Jonathan Alzaheri (Torre 21)"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <use href="#ico-wa" /></svg
+                >Contactar
+              </a>
+            </div>
+          </div>
+          <!-- /leaders-card -->
+
+          <!-- ── DOWNLOAD (Poder) ── -->
+          <div class="download-section">
+            <div class="download-text">
+              <h3>📄 Formato de PODER</h3>
+              <p>
+                Si no puedes asistir a la asamblea de manera presencial, puedes
+                autorizar a alguien que te represente, descarga el documento,
+                diligencia el poder y tu apoderado debe presentarlo en la
+                asamblea.
+              </p>
+            </div>
+            <a
+              href="https://docs.google.com/document/d/16ie4X4ZlmmbALUY4LE1lRmeUvQ0WvdQm/edit?usp=sharing&ouid=104524812570244137043&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener"
+              class="btn-download"
+            >
+              ⬇ Descargar Formato de PODER
+            </a>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ────────────────────────────────────
+             4. FORMULARIO DE INQUIETUDES
+        ──────────────────────────────────── -->
+        <section id="formulario" aria-labelledby="h-formulario">
+          <div class="section-head">
+            <div class="section-icon si-form">💬</div>
+            <div class="section-head-text">
+              <h2 id="h-formulario">Registra tu Sugerencia o Pregunta</h2>
+              <span class="sub"
+                >Con el fin de organizarnos para la asamblea y no repetir las
+                mismas preguntas una y otra vez, sugerimos las registres aquí
+                para clasificarlas y agruparlas, de esta manera nos organizamos
+                mejor. Tus preguntas se clasificarán por subpunto y serán
+                revisadas antes de la asamblea</span
+              >
+            </div>
+          </div>
+
+          <div class="form-card">
+            <p class="form-intro">
+              Selecciona el tema del punto 5 sobre el que tienes dudas, indica
+              tu torre, y describe tu sugerencia o pregunta. La información se
+              registrará automáticamente en nuestra hoja de seguimiento.
+            </p>
+
+            <form id="inquietudForm" novalidate>
+              <div class="form-group">
+                <label for="campo-torre"
+                  >Torre <span class="req">*</span></label
+                >
+                <select id="campo-torre" name="torre" required>
+                  <option value="" disabled selected>
+                    — Selecciona tu torre —
+                  </option>
+                  <option value="1">Torre 1</option>
+                  <option value="2">Torre 2</option>
+                  <option value="3">Torre 3</option>
+                  <option value="4">Torre 4</option>
+                  <option value="5">Torre 5</option>
+                  <option value="6">Torre 6</option>
+                  <option value="7">Torre 7</option>
+                  <option value="8">Torre 8</option>
+                  <option value="9">Torre 9</option>
+                  <option value="10">Torre 10</option>
+                  <option value="11">Torre 11</option>
+                  <option value="12">Torre 12</option>
+                  <option value="13">Torre 13</option>
+                  <option value="14">Torre 14</option>
+                  <option value="15">Torre 15</option>
+                  <option value="16">Torre 16</option>
+                  <option value="17">Torre 17</option>
+                  <option value="18">Torre 18</option>
+                  <option value="19">Torre 19</option>
+                  <option value="20">Torre 20</option>
+                  <option value="21">Torre 21</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="campo-tema"
+                  >¿Sobre qué es tu sugerencia?
+                  <span class="req">*</span></label
+                >
+                <select id="campo-tema" name="tema" required>
+                  <option value="" disabled selected>
+                    — Selecciona el tema a tratar —
+                  </option>
+                  <option
+                    value="5.1 Inexistencia de Quórum Deliberatorio y Decisorio"
+                  >
+                    5.1 — Inexistencia de Quórum Deliberatorio y Decisorio
+                  </option>
+                  <option
+                    value="5.2 Limitación del Derecho de Participación y Voto"
+                  >
+                    5.2 — Limitación del Derecho de Participación y Voto
+                  </option>
+                  <option
+                    value="5.3 Tiempo limitado para la entrega de la Información"
+                  >
+                    5.3 — Tiempo limitado para la entrega de la Información
+                  </option>
+                  <option
+                    value="5.4 Presentación de presupuesto sin desglose por rubros y sin notas"
+                  >
+                    5.4 — Presentación de presupuesto sin desglose por rubros y
+                    sin notas
+                  </option>
+                  <option
+                    value="5.5 Aclaración sobre la composición del consejo de administración"
+                  >
+                    5.5 — Aclaración sobre la composición del consejo de
+                    administración
+                  </option>
+                  <option
+                    value="5.6 Continuidad/remoción y elección de miembros del Consejo de Administración"
+                  >
+                    5.6 — Continuidad/remoción y elección de miembros del
+                    Consejo de Administración
+                  </option>
+                  <option
+                    value="5.7 Irregularidades en la Dirección de la Asamblea"
+                  >
+                    5.7 — Irregularidades en la Dirección de la Asamblea
+                  </option>
+                  <option
+                    value="5.8 Impugnación del acta del 29 de marzo de 2026"
+                  >
+                    5.8 — Impugnación del acta del 29 de marzo de 2026
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="campo-inquietud"
+                  >Detalle de tu sugerencia basado en el tema que elegiste
+                  <span class="req">*</span></label
+                >
+                <textarea
+                  id="campo-inquietud"
+                  name="inquietud"
+                  placeholder="Escribe aquí tu sugerencia específica..."
+                  required
+                ></textarea>
+                <div
+                  id="word-count"
+                  style="
+                    font-size: 0.85em;
+                    color: var(--text-muted);
+                    margin-top: 5px;
+                    text-align: right;
+                    font-weight: 500;
+                  "
+                >
+                  0 / 200 palabras
+                </div>
+              </div>
+
+              <button type="submit" id="btn-enviar" class="btn-submit">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  aria-hidden="true"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Enviar Sugerencia
+              </button>
+
+              <div
+                id="form-feedback"
+                class="form-feedback"
+                role="alert"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- ────────────────────────────────────
+             5. ESTADÍSTICAS DE SUGERENCIAS
+        ──────────────────────────────────── -->
+        <section id="estadisticas" aria-labelledby="h-estadisticas">
+          <div class="section-head">
+            <div
+              class="section-icon"
+              style="background: var(--info-light); color: var(--info)"
+            >
+              📊
+            </div>
+            <div class="section-head-text">
+              <h2 id="h-estadisticas">Temas que más sugerencias tienen</h2>
+              <span class="sub"
+                >Distribución de las sugerencias registradas hasta el momento —
+                <span
+                  id="chart-status"
+                  style="color: var(--emerald); font-weight: 700"
+                  >⏳ Cargando...</span
+                ></span
+              >
+            </div>
+          </div>
+
+          <div class="form-card" style="padding: 20px; position: relative">
+            <div
+              id="chart-overlay"
+              style="
+                display: none;
+                position: absolute;
+                inset: 0;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: var(--r-md);
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                color: var(--emerald);
+                font-size: 0.9em;
+                gap: 8px;
+                z-index: 5;
+              "
+            >
+              🔄 Actualizando...
+            </div>
+            <canvas id="sugerenciasChart"></canvas>
+            <div
+              id="chart-footer"
+              style="
+                text-align: right;
+                font-size: 0.78em;
+                color: var(--text-muted);
+                margin-top: 10px;
+              "
+            >
+              Total: <strong id="chart-total">0</strong> sugerencias · Actualiza
+              cada 30 seg
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- /main-content -->
+
+      <!-- ═══════════ FOOTER ═══════════ -->
+      <footer class="site-footer">
+        <p>
+          <strong>🔒 Protección de Datos Personales:</strong> De acuerdo con la
+          Ley 1581 de 2012, los datos suministrados serán tratados con absoluta
+          reserva y con la finalidad única de acreditar la voluntad de los
+          propietarios para realizar la Asamblea Extraordinaria de Bosque
+          Robledal. No serán utilizados para fines distintos a este proceso.
+        </p>
+      </footer>
+    </div>
+    <!-- /page-wrapper -->
+
+    <!-- ══════════════════════════════════════
+         SCRIPT — Formulario + Google Sheets
+    ══════════════════════════════════════
+
+     PASO A PASO PARA CONECTAR CON GOOGLE SHEETS:
+     ─────────────────────────────────────────────
+     1. Crea una hoja de cálculo en Google Sheets con estos encabezados (fila 1):
+        A: Fecha | B: Torre | C: Subpunto | D: Inquietud
+
+     2. Ve a Extensiones → Apps Script y pega:
+
+        function doPost(e) {
+          var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+          var data  = JSON.parse(e.postData.contents);
+          sheet.appendRow([new Date(), data.torre, data.tema, data.inquietud]);
+          return ContentService
+            .createTextOutput(JSON.stringify({ result: 'ok' }))
+            .setMimeType(ContentService.MimeType.JSON);
+        }
+
+     3. Implementar → Nueva implementación → Tipo: Aplicación web
+        · Ejecutar como: Yo (tu cuenta de Google)
+        · Acceso: Cualquier persona
+        · Copiar la URL generada (termina en /exec)
+
+     4. Reemplazar 'TU_URL_DE_APPS_SCRIPT_AQUI' abajo con esa URL.
+
+     5. En la hoja de cálculo: Datos → Crear un filtro → filtrar por columna D (Subpunto).
+    -->
+    <script>
+      const SHEETS_WEBHOOK_URL =
+        "https://script.google.com/macros/s/AKfycbzfCePdyIjvRuy52LT2ZlO7BH-r3EcrdNLMuAf7hCFxMbFsETLsKsXIbaIyC6G0eWY/exec"; // ← Reemplaza aquí
+
+      const form = document.getElementById("inquietudForm");
+      const btnEnv = document.getElementById("btn-enviar");
+      const feedback = document.getElementById("form-feedback");
+
+      const BTN_DEFAULT_HTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        Enviar Sugerencia`;
+
+      function showFeedback(type, msg) {
+        feedback.className = "form-feedback " + type;
+        feedback.innerHTML = (type === "success" ? "✅ " : "❌ ") + msg;
+        feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function clearFeedback() {
+        feedback.className = "form-feedback";
+        feedback.innerHTML = "";
+      }
+
+      const inquietudEl = document.getElementById("campo-inquietud");
+      const wordCountEl = document.getElementById("word-count");
+
+      function countWords(str) {
+        return str
+          .trim()
+          .split(/\s+/)
+          .filter((w) => w.length > 0).length;
+      }
+
+      inquietudEl.addEventListener("input", () => {
+        const wordsCount = countWords(inquietudEl.value);
+        wordCountEl.textContent = `${wordsCount} / 200 palabras`;
+        if (wordsCount > 200) {
+          wordCountEl.style.color = "var(--danger)";
+        } else {
+          wordCountEl.style.color = "var(--text-muted)";
+        }
+      });
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        clearFeedback();
+
+        const torre = document.getElementById("campo-torre").value.trim();
+        const tema = document.getElementById("campo-tema").value;
+        const inquietud = document
+          .getElementById("campo-inquietud")
+          .value.trim();
+
+        if (!torre || !tema || !inquietud) {
+          showFeedback(
+            "error",
+            "Por favor completa todos los campos antes de enviar.",
+          );
+          return;
+        }
+
+        const wordsCount = countWords(inquietud);
+        if (wordsCount > 200) {
+          showFeedback(
+            "error",
+            "Tu sugerencia excede el límite de 200 palabras. Por favor, sé más concisa(o).",
+          );
+          return;
+        }
+
+        // ── Demo mode (URL not configured yet) ──
+        if (SHEETS_WEBHOOK_URL === "TU_URL_DE_APPS_SCRIPT_AQUI") {
+          btnEnv.disabled = true;
+          btnEnv.innerHTML = "⏳ Enviando...";
+          await new Promise((r) => setTimeout(r, 1100));
+          showFeedback(
+            "success",
+            "¡Inquietud registrada en modo demo! Configura el webhook de Apps Script para guardarla en Google Sheets.",
+          );
+          btnEnv.disabled = false;
+          btnEnv.innerHTML = BTN_DEFAULT_HTML;
+          form.reset();
+          return;
+        }
+
+        // ── Production mode ──
+        btnEnv.disabled = true;
+        btnEnv.innerHTML = "⏳ Enviando...";
+
+        try {
+          await fetch(SHEETS_WEBHOOK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ torre, tema, inquietud }),
+          });
+          showFeedback(
+            "success",
+            "¡Tu inquietud fue enviada correctamente! Será revisada antes de la asamblea del 26 de abril.",
+          );
+          form.reset();
+
+          // Actualizar la gráfica localmente para que suba sola de inmediato
+          if (window.sugerenciasChart) {
+            const themeIndex = [
+              "5.1",
+              "5.2",
+              "5.3",
+              "5.4",
+              "5.5",
+              "5.6",
+              "5.7",
+              "5.8",
+            ].findIndex((t) => tema.includes(t));
+
+            if (themeIndex !== -1) {
+              window.sugerenciasChart.data.datasets[0].data[themeIndex]++;
+              window.sugerenciasChart.update();
+            }
+          }
+        } catch (err) {
+          showFeedback(
+            "error",
+            "Ocurrió un error al enviar. Por favor intenta de nuevo o contacta al líder de tu torre.",
+          );
+        } finally {
+          btnEnv.disabled = false;
+          btnEnv.innerHTML = BTN_DEFAULT_HTML;
+        }
+      });
+      // ── Gráfico de Estadísticas Dinámico con Auto-Refresh ──
+      const CHART_LABELS = [
+        "5.1 Quórum",
+        "5.2 Voto",
+        "5.3 Información",
+        "5.4 Presupuesto",
+        "5.5 Consejo",
+        "5.6 Remoción",
+        "5.7 Dirección",
+        "5.8 Impugnación",
+      ];
+      const CHART_KEYS = [
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6",
+        "5.7",
+        "5.8",
+      ];
+
+      const chartStatus = document.getElementById("chart-status");
+      const chartOverlay = document.getElementById("chart-overlay");
+      const chartTotal = document.getElementById("chart-total");
+
+      function setChartStatus(state) {
+        if (state === "ok") {
+          const now = new Date().toLocaleTimeString("es-CO", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          chartStatus.style.color = "var(--emerald)";
+          chartStatus.textContent = "✅ Actualizado a las " + now;
+        } else if (state === "loading") {
+          chartStatus.style.color = "var(--gold)";
+          chartStatus.textContent = "🔄 Actualizando...";
+        } else {
+          chartStatus.style.color = "var(--slate-500)";
+          chartStatus.textContent = "⚠️ Sin conexión en este momento";
+        }
+      }
+
+      async function fetchChartData(showOverlay = false) {
+        if (showOverlay) {
+          chartOverlay.style.display = "flex";
+        }
+        setChartStatus("loading");
+        try {
+          const response = await fetch(SHEETS_WEBHOOK_URL + "?t=" + Date.now());
+          const result = await response.json();
+          if (result && result.stats && Array.isArray(result.stats)) {
+            // Actualizar gráfica con animación
+            window.sugerenciasChart.data.datasets[0].data = result.stats;
+            window.sugerenciasChart.update("active");
+            const total = result.stats.reduce((a, b) => a + b, 0);
+            chartTotal.textContent = total;
+            setChartStatus("ok");
+          } else {
+            setChartStatus("offline");
+          }
+        } catch (error) {
+          setChartStatus("offline");
+          console.log("Error al obtener datos de la gráfica:", error);
+        } finally {
+          if (showOverlay) {
+            chartOverlay.style.display = "none";
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const ctx = document
+          .getElementById("sugerenciasChart")
+          .getContext("2d");
+
+        window.sugerenciasChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: CHART_LABELS,
+            datasets: [
+              {
+                label: "Sugerencias",
+                data: [0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                  "rgba(5,150,105,0.7)",
+                  "rgba(3,105,161,0.7)",
+                  "rgba(217,119,6,0.7)",
+                  "rgba(220,38,38,0.7)",
+                  "rgba(124,58,237,0.7)",
+                  "rgba(5,150,105,0.7)",
+                  "rgba(3,105,161,0.7)",
+                  "rgba(217,119,6,0.7)",
+                ],
+                borderColor: [
+                  "rgba(5,150,105,1)",
+                  "rgba(3,105,161,1)",
+                  "rgba(217,119,6,1)",
+                  "rgba(220,38,38,1)",
+                  "rgba(124,58,237,1)",
+                  "rgba(5,150,105,1)",
+                  "rgba(3,105,161,1)",
+                  "rgba(217,119,6,1)",
+                ],
+                borderWidth: 1.5,
+                borderRadius: 6,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            animation: { duration: 800, easing: "easeInOutQuart" },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) =>
+                    ` ${ctx.parsed.y} sugerencia${ctx.parsed.y !== 1 ? "s" : ""}`,
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { stepSize: 1, precision: 0 },
+                grid: { color: "rgba(0,0,0,0.05)" },
+              },
+              x: { grid: { display: false } },
+            },
+          },
+        });
+
+        // Carga inicial
+        fetchChartData(false);
+
+        // Auto-refresh cada 30 segundos
+        setInterval(() => fetchChartData(true), 30000);
+      });
+
+      // Exponer función para actualizar desde el envío del formulario
+      window.refreshChart = () => fetchChartData(true);
+    </script>
+  </body>
+</html>
