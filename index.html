@@ -903,6 +903,102 @@
           gap: 6px;
         }
       }
+
+      /* ══════════════════════════════════════
+         MODAL DE CONFIRMACIÓN
+      ══════════════════════════════════════ */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(6px);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .modal-overlay.active {
+        display: flex;
+        animation: overlayIn 0.25s ease;
+      }
+      @keyframes overlayIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .modal-box {
+        background: #fff;
+        border-radius: 20px;
+        padding: 48px 40px 40px;
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+        box-shadow:
+          0 24px 80px rgba(4, 120, 87, 0.18),
+          0 4px 24px rgba(0, 0, 0, 0.12);
+        animation: boxIn 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      @keyframes boxIn {
+        from {
+          transform: scale(0.82) translateY(24px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+      .modal-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 20px;
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.12);
+      }
+      .modal-title {
+        font-size: 1.45em;
+        font-weight: 800;
+        color: var(--emerald-dark);
+        margin: 0 0 10px;
+        letter-spacing: -0.02em;
+      }
+      .modal-body {
+        font-size: 0.97em;
+        color: var(--slate-600);
+        line-height: 1.65;
+        margin: 0 0 28px;
+      }
+      .modal-close {
+        background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 13px 36px;
+        font-size: 1em;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.18s,
+          box-shadow 0.18s;
+        box-shadow: 0 4px 14px rgba(4, 120, 87, 0.35);
+        letter-spacing: 0.01em;
+      }
+      .modal-close:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(4, 120, 87, 0.45);
+      }
+      .modal-close:active {
+        transform: scale(0.97);
+      }
     </style>
   </head>
 
@@ -1159,6 +1255,12 @@
                 >Contacta al líder de tu torre si tienes dudas o
                 inquietudes</span
               >
+              <h4 id="h-lideres">
+                En el caso de que exista la posibilidad de elegir nuevos
+                miembros del Consejo de Administración, y estés interesado en
+                pertenecer al mismo, además tengas el tiempo y la disposición,
+                te pedimos que contactes al líder de tu torre:
+              </h4>
             </div>
           </div>
 
@@ -1479,7 +1581,8 @@
               <p>
                 Si no puedes asistir a la asamblea de manera presencial, puedes
                 autorizar a alguien que te represente, descarga el documento,
-                diligencia el poder y tu apoderado debe presentarlo en la
+                diligencia el poder, fírmalo y anéxale copia del tu documento de
+                identidad y haz que tu apoderado lo presente en la
                 asamblea.
               </p>
             </div>
@@ -1508,8 +1611,8 @@
                 >Con el fin de organizarnos para la asamblea y no repetir las
                 mismas preguntas una y otra vez, sugerimos las registres aquí
                 para clasificarlas y agruparlas, de esta manera nos organizamos
-                mejor. Tus preguntas se clasificarán por subpunto y serán
-                revisadas antes de la asamblea</span
+                mejor. Tus preguntas se clasificarán por tema y serán
+                revisadas para exponerlas durante la asamblea</span
               >
             </div>
           </div>
@@ -1843,10 +1946,7 @@
           btnEnv.disabled = true;
           btnEnv.innerHTML = "⏳ Enviando...";
           await new Promise((r) => setTimeout(r, 1100));
-          showFeedback(
-            "success",
-            "¡Inquietud registrada en modo demo! Configura el webhook de Apps Script para guardarla en Google Sheets.",
-          );
+          document.getElementById("modal-exito").classList.add("active");
           btnEnv.disabled = false;
           btnEnv.innerHTML = BTN_DEFAULT_HTML;
           form.reset();
@@ -1864,10 +1964,7 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ torre, tema, inquietud }),
           });
-          showFeedback(
-            "success",
-            "¡Tu inquietud fue enviada correctamente! Será revisada antes de la asamblea del 26 de abril.",
-          );
+          document.getElementById("modal-exito").classList.add("active");
           form.reset();
 
           // Actualizar la gráfica localmente para que suba sola de inmediato
@@ -2040,5 +2137,33 @@
       // Exponer función para actualizar desde el envío del formulario
       window.refreshChart = () => fetchChartData(true);
     </script>
+
+    <!-- ═══════════ MODAL DE CONFIRMACIÓN ═══════════ -->
+    <div
+      id="modal-exito"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-titulo"
+    >
+      <div class="modal-box">
+        <div class="modal-icon">✅</div>
+        <h2 class="modal-title" id="modal-titulo">¡Sugerencia guardada!</h2>
+        <p class="modal-body">
+          Gracias por tu participación 🌿<br />
+          Tu sugerencia fue registrada correctamente y será revisada antes de la
+          asamblea del <strong>26 de abril</strong>.
+        </p>
+        <button
+          class="modal-close"
+          id="modal-close-btn"
+          onclick="
+            document.getElementById('modal-exito').classList.remove('active')
+          "
+        >
+          Entendido
+        </button>
+      </div>
+    </div>
   </body>
 </html>
